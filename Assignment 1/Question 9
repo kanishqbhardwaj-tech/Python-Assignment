@@ -1,0 +1,13 @@
+from datetime import datetime
+
+def check_date_difference(from_date, to_date, difference):
+    
+    fmt = "%y-%m-%d" 
+    d1 = datetime.strptime(from_date, fmt)
+    d2 = datetime.strptime(to_date, fmt)
+    
+    delta = abs((d2 - d1).days)
+    
+    return delta < difference
+    print(check_date_difference("23-01-01", "23-01-05", 5))
+print(check_date_difference("23-01-01", "23-01-10", 5)) 
