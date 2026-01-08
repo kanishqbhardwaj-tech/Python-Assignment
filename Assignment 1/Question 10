@@ -1,0 +1,15 @@
+from datetime import datetime, timedelta
+
+def days_before(date, n):
+    fmt = "%y-%m-%d"
+    try:
+        d = datetime.strptime(date, fmt) 
+    except ValueError:
+        return "Error: date format must be 'yy-mm-dd'"
+    
+    new_date = d - timedelta(days=n)  
+    return new_date.strftime(fmt)       
+
+
+print(days_before('16-12-10', 11)) 
+print(days_before('23-01-05', 5))  
